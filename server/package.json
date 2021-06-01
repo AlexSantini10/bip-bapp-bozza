@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.7",
+    "socketio": "^1.0.0"
   }
 }
