@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 
 function Chat() {
 
-    function getSearchParameters() {
-        var prmstr = window.location.search.substr(1);
-        return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-    }
-    
-    function transformToAssocArray( prmstr ) {
-        var params = {};
-        var prmarr = prmstr.split("&");
-        for ( var i = 0; i < prmarr.length; i++) {
-            var tmparr = prmarr[i].split("=");
-            params[tmparr[0]] = tmparr[1];
-        }
-        return params;
-    }
+    const [username, setUsername] = useState('');
+    const [room, setRoom] = useState('');
 
-    const params = getSearchParameters();
+    useEffect(() => {
+        function getSearchParameters() {
+            var prmstr = window.location.search.substr(1);
+            return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+        }
+        
+        function transformToAssocArray( prmstr ) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for ( var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+    
+        const params = getSearchParameters();
+
+        setUsername(params['username']);
+        setRoom(params['room']);
+    }, [])
+
+    
 
     return (
         <div>
