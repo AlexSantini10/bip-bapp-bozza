@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-coding-lab/chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/A-coding-lab/chat/issues"
+  },
+  "homepage": "https://github.com/A-coding-lab/chat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.0.0"
+  }
+}
